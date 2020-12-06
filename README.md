@@ -8,7 +8,7 @@ MIX_ENV=prod
 WPA_SSID=yourwifissid
 WPA_PSK=yourwifipassword
 ```
-Make sure to update these example values to values relevant to your use case. If you don't intend to use wifi, you can exclude the last two lines. 
+Make sure to update these example values to values relevant to your use case. If you don't intend to use wifi, you can exclude the last two lines.
 * Run `docker-compose up -d`
 * Enter the container with `docker-compose exec nerves bash`
 * Create your project with `mix nerves.new project_name_here`
@@ -35,4 +35,5 @@ config :vintage_net,
   ]
 ```
 * Exit the docker container and burn the project contents with `sh ./burn.sh`
-* Once running, update the project over wifi with `sh ./update.sh`
+* If you want to perform over the air updates, make sure to include the IP address of the device on the last line of `update.sh`
+* Once the device is running on your wifi network, you can update it over the air with `sh ./update.sh`
